@@ -58,7 +58,7 @@
     </header>
     <div class="inicio">
         <img src="../assets/images/Bolsa-Café.png" alt="">
-        <h1>Galeno Coffee</h1>
+        <h1 id="nombreCafe">Galeno Coffee</h1>
     </div>
     <div class="detalle">
         <div class="lineas">
@@ -86,9 +86,7 @@
             <p>Finca Hope, El Arenal</p>
         </div>
         <br>
-        <a href="">
-            <button><i class="fa-brands fa-whatsapp"></i>  Comprar Café</button>
-        </a>
+        <button id="comprarBtn"><i class="fa-brands fa-whatsapp"></i> Comprar Café</button>
     </div>
 
     <div class="info-cafe">
@@ -111,6 +109,16 @@
     <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
         <ion-icon name="chevron-up"></ion-icon>
     </a>
+    <script>
+        document.getElementById('comprarBtn').addEventListener('click', function () {
+            var nombreCafe = document.getElementById('nombreCafe').innerText;
+            var mensaje = "Estoy interesado en el café " + nombreCafe;
+            var numeroWhatsapp = "50584628930"; 
+            var url = "https://api.whatsapp.com/send?phone=" + numeroWhatsapp + "&text=" + encodeURIComponent(mensaje);
+
+            window.open(url, '_blank');
+        });
+    </script>
 
     <script src="./assets/js/script.js" defer></script>
 
